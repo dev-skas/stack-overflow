@@ -1,0 +1,54 @@
+<div class="container">
+
+
+<div *ngIf="visible">
+  <div *ngFor="let item of datas">
+    <div class="post card my-4">
+      <div class="head card-header">
+        <img class="profile_image" src="{{item.owner.profile_image}}" alt="">
+        <div class="user-field">
+          <h5 class="user-name">{{item.owner.display_name}}</h5>
+          <h6 class="post-view">Views : {{item.view_count}}</h6>
+        </div>
+      </div>
+
+      <div class="">
+        <h5 class="my-3 mx-2 question"> {{item.title}}</h5>
+
+        <span *ngFor="let items of item.tags" title="{{items}}" class="badge bg-light text-dark m-1">#{{items}}</span>
+
+      </div>
+      <div class="footer">
+        <div title="Upvote" class="f1">
+          <span>{{item.score}}</span>
+
+          <i class="bi mx-1 bi-arrow-up"></i>
+        </div>
+
+        <div title="Total Answers" class="f2">
+          <span>{{item.answer_count}}</span><i class="bi mx-1 bi-chat-left-dots"> </i>
+        </div>
+        <div class="f3 ">
+          <a href="https://stackoverflow.com/a/{{item.accepted_answer_id}}">
+
+            Show Answer
+          </a>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="errors" class="alert alert-danger" role="alert">
+  {{error_message}}
+</div>
+
+<div *ngIf="!visible" class="alert alert-danger" role="alert">
+  Your Search term is not find in database
+</div>
+
+</div>

@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+.container {
+  margin-top: 70px;
+}
+
+body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+
+
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
